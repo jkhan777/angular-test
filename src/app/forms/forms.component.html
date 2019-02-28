@@ -1,0 +1,22 @@
+<h1>forms</h1>
+<h2>template forms</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <!-- first name -->
+  <label>first name </label>
+  <input type="text" id="firstNameInput" placeholder="first name" name="firstname" ngModel>
+  <!-- last name -->
+  <label>last name </label>
+  <input type="text" id="lastNameInput" placeholder="last name" name="lastname" ngModel>
+  <!-- age -->
+  <label>age </label>
+  <input type="text" id="ageInput" placeholder="age" name="age" ngModel>
+
+  <button type="submit">Submit</button>
+</form>
+<h2>reactive forms</h2>
+<form [formGroup]="myForm" (ngSubmit)="submitReactive(myForm.value)">
+  <label>favourite film </label>
+  <input type="text" id="favFilmInput" placeholder="favourite film" name="favFilm" [formControl]="myForm.controls['favFilm']">
+
+  <button type="Submit">Submit</button>
+</form>
